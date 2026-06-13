@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "Fusion Pixel";
-  src: url("fonts/fusion-pixel-12px-zh-hant.woff2") format("woff2");
+  font-family: "Fusion Pixel 12px";
+  src: url("./fonts/fusion-pixel-12px-zh-hant.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -92,14 +94,14 @@ body {
 
 h1 {
   margin: 0;
-  font-family: "Fusion Pixel", "Microsoft JhengHei", sans-serif;
-  font-size: clamp(2rem, 7vw, 3.25rem);
+  font-family: "Fusion Pixel 12px", monospace;
+  font-size: clamp(2.25rem, 7vw, 3rem);
   font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 1.15;
-  text-shadow:
-    3px 0 0 rgba(251, 113, 133, 0.25),
-    0 3px 0 rgba(124, 58, 237, 0.22);
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  text-shadow: none;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
 }
 
 .description {
