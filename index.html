@@ -54,7 +54,6 @@
         outline: none;
       }
     </style>
-    <script src="app.js?v=20260613-5" defer></script>
   </head>
   <body>
     <main class="page-shell">
@@ -121,5 +120,27 @@
         <p class="note">若瀏覽器阻擋自動播放，請手動按下播放器的播放鍵。</p>
       </section>
     </main>
+
+    <script>
+      const player = document.querySelector("#music-player");
+      const currentTrack = document.querySelector("#current-track");
+      const trackSelect = document.querySelector("#track-select");
+      const mobileSongLink = document.querySelector("#mobile-song-link");
+
+      function updateSelectedTrack() {
+        const selectedOption = trackSelect.selectedOptions[0];
+        const trackId = selectedOption.value;
+        const trackName = selectedOption.dataset.trackName;
+
+        player.src =
+          `https://music.163.com/outchain/player?type=2&id=${trackId}` +
+          "&auto=0&height=66";
+        currentTrack.textContent = trackName;
+        mobileSongLink.href = `https://music.163.com/#/song?id=${trackId}`;
+        mobileSongLink.textContent = `播放器無法顯示？在網易雲開啟「${trackName}」`;
+      }
+
+      trackSelect.addEventListener("change", updateSelectedTrack);
+    </script>
   </body>
 </html>
