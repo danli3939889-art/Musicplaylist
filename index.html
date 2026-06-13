@@ -4,18 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
-    <title>音樂播放器</title>
+    <title>歡迎收聽</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <main class="page-shell">
       <section class="player-card" aria-labelledby="page-title">
-        <p class="eyebrow">NOW PLAYING</p>
-        <h1 id="page-title">今天也聽首歌吧</h1>
-        <p class="description">按下播放，讓音樂陪你一會兒。</p>
+        <a
+          class="netease-link"
+          href="https://music.163.com/#/artist?id=125226318"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="前往李思琰的網易雲音樂主頁"
+          title="網易雲音樂主頁"
+        >
+          <span class="netease-logo" aria-hidden="true">◎</span>
+        </a>
+
+        <p class="eyebrow">MY PLAYLIST</p>
+        <h1 id="page-title">歡迎收聽</h1>
+        <p class="description">選一首歌，讓音樂陪你一會兒。</p>
+
+        <div class="now-playing" aria-live="polite">
+          <span>目前播放</span>
+          <strong id="current-track">Whispers of the Wild</strong>
+        </div>
 
         <div class="player-frame">
           <iframe
+            id="music-player"
             title="網易雲音樂播放器"
             frameborder="0"
             border="0"
@@ -28,7 +46,21 @@
           ></iframe>
         </div>
 
-        <p class="note">若瀏覽器阻擋自動播放，請手動按下播放鍵。</p>
+        <div class="playlist">
+          <label for="track-select">選擇歌曲</label>
+          <div class="select-wrap">
+            <select id="track-select" aria-label="選擇要播放的歌曲">
+              <option value="3393296463" data-track-name="Whispers of the Wild">
+                01　Whispers of the Wild
+              </option>
+              <option value="3393012424" data-track-name="できるよサイン(你能做到)">
+                02　できるよサイン(你能做到)
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <p class="note">若瀏覽器阻擋自動播放，請手動按下播放器的播放鍵。</p>
       </section>
     </main>
   </body>
