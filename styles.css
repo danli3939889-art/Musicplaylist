@@ -19,16 +19,47 @@
 }
 
 body {
+  position: relative;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
   background:
-    radial-gradient(circle at 20% 20%, rgba(225, 29, 72, 0.22), transparent 32rem),
-    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.18), transparent 30rem),
-    #09090b;
+    radial-gradient(circle at 15% 18%, rgba(244, 63, 94, 0.34), transparent 27rem),
+    radial-gradient(circle at 84% 76%, rgba(124, 58, 237, 0.3), transparent 30rem),
+    radial-gradient(circle at 74% 12%, rgba(56, 189, 248, 0.16), transparent 23rem),
+    linear-gradient(145deg, #09090b 0%, #111027 50%, #09090b 100%);
+  background-attachment: fixed;
+}
+
+body::before,
+body::after {
+  position: fixed;
+  z-index: 0;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  content: "";
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.55;
+}
+
+body::before {
+  top: 10%;
+  left: max(-90px, calc(50% - 380px));
+  background: linear-gradient(135deg, #fb7185, #7c3aed);
+}
+
+body::after {
+  right: max(-100px, calc(50% - 390px));
+  bottom: 8%;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
 }
 
 .page-shell {
+  position: relative;
+  z-index: 1;
   display: grid;
   min-height: 100vh;
   place-items: center;
@@ -37,19 +68,58 @@ body {
 
 .player-card {
   position: relative;
+  isolation: isolate;
   width: min(100%, 480px);
   padding: 48px 36px;
   overflow: hidden;
   text-align: center;
-  background: rgba(24, 24, 27, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035) 42%),
+    rgba(17, 16, 32, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 28px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(18px);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.46),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(28px) saturate(145%);
+  -webkit-backdrop-filter: blur(28px) saturate(145%);
+}
+
+.player-card::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 9%;
+  width: 82%;
+  height: 1px;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+  box-shadow: 0 1px 18px rgba(255, 255, 255, 0.32);
+}
+
+.player-card::after {
+  position: absolute;
+  z-index: 0;
+  right: -90px;
+  bottom: -110px;
+  width: 250px;
+  height: 250px;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.2), transparent 68%);
+  border-radius: 50%;
+}
+
+.player-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .social-links {
   position: absolute;
+  z-index: 2;
   top: 20px;
   right: 20px;
   display: grid;
