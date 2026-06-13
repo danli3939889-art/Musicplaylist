@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>音樂播放器</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="player-card" aria-labelledby="page-title">
+        <p class="eyebrow">NOW PLAYING</p>
+        <h1 id="page-title">今天也聽首歌吧</h1>
+        <p class="description">按下播放，讓音樂陪你一會兒。</p>
+
+        <div class="player-frame">
+          <iframe
+            title="網易雲音樂播放器"
+            frameborder="0"
+            border="0"
+            marginwidth="0"
+            marginheight="0"
+            width="330"
+            height="86"
+            src="https://music.163.com/outchain/player?type=2&id=3393296463&auto=1&height=66"
+            allow="autoplay"
+          ></iframe>
+        </div>
+
+        <p class="note">若瀏覽器阻擋自動播放，請手動按下播放鍵。</p>
+      </section>
+    </main>
+  </body>
+</html>

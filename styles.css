@@ -1,0 +1,93 @@
+:root {
+  font-family:
+    Inter, "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  color: #f8fafc;
+  background: #09090b;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(225, 29, 72, 0.22), transparent 32rem),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.18), transparent 30rem),
+    #09090b;
+}
+
+.page-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.player-card {
+  width: min(100%, 480px);
+  padding: 48px 36px;
+  overflow: hidden;
+  text-align: center;
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #fb7185;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.description {
+  margin: 16px 0 32px;
+  color: #a1a1aa;
+  line-height: 1.7;
+}
+
+.player-frame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 86px;
+  padding: 10px 0;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 14px;
+}
+
+.player-frame iframe {
+  flex: 0 0 330px;
+  display: block;
+}
+
+.note {
+  margin: 22px 0 0;
+  color: #71717a;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 420px) {
+  .page-shell {
+    padding: 14px;
+  }
+
+  .player-card {
+    padding: 36px 14px;
+    border-radius: 22px;
+  }
+}
