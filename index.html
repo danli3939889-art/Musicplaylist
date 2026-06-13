@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
     <title>歡迎收聽</title>
-    <link rel="stylesheet" href="styles.css?v=20260613-4" />
+    <link rel="stylesheet" href="styles.css?v=20260613-5" />
     <style>
       /* Critical UI styles stay inline so hosting caches cannot hide the controls. */
       .player-card {
@@ -54,7 +54,7 @@
         outline: none;
       }
     </style>
-    <script src="app.js?v=20260613-4" defer></script>
+    <script src="app.js?v=20260613-5" defer></script>
   </head>
   <body>
     <main class="page-shell">
@@ -89,10 +89,20 @@
             marginheight="0"
             width="330"
             height="86"
-            src="https://music.163.com/outchain/player?type=2&id=3393296463&auto=1&height=66"
-            allow="autoplay"
+            src="https://music.163.com/outchain/player?type=2&id=3393296463&auto=0&height=66"
+            loading="eager"
           ></iframe>
         </div>
+
+        <a
+          id="mobile-song-link"
+          class="mobile-song-link"
+          href="https://music.163.com/#/song?id=3393296463"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          播放器無法顯示？在網易雲開啟這首歌
+        </a>
 
         <div class="playlist">
           <label for="track-select">選擇歌曲</label>

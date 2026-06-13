@@ -135,8 +135,23 @@ h1 {
 }
 
 .player-frame iframe {
-  flex: 0 0 330px;
   display: block;
+  width: min(330px, 100%);
+  max-width: 100%;
+  border: 0;
+}
+
+.mobile-song-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #fda4af;
+  font-size: 0.82rem;
+  text-underline-offset: 4px;
+}
+
+.mobile-song-link:hover,
+.mobile-song-link:focus-visible {
+  color: #ffffff;
 }
 
 .playlist {
@@ -209,5 +224,13 @@ h1 {
   .player-card {
     padding: 36px 14px;
     border-radius: 22px;
+  }
+
+  .player-frame {
+    padding: 8px;
+  }
+
+  .player-frame iframe {
+    width: 100%;
   }
 }
